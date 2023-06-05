@@ -30,6 +30,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: set env
+        run: |
+          echo VITE_GITHUB_TOKEN_UPW=${{ secrets.GH_TOKEN_UPW }} >> .env
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
