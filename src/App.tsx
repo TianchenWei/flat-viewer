@@ -10,9 +10,13 @@ import { OrgListing } from "./components/org-listing";
 import { Home } from "./components/home";
 import { useProgressBar } from "./hooks";
 
+console.log(import.meta.env.BASE_URL);
+const baseUrl = import.meta.env.BASE_URL;
+
 function App() {
   const isFetching = useIsFetching();
   useProgressBar(isFetching);
+
 
   return (
     <HeadProvider>
@@ -20,9 +24,9 @@ function App() {
       <Router>
         <QueryParamProvider ReactRouterRoute={Route}>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/:org/" component={OrgListing} />
-            <Route path="/:owner/:name" component={RepoDetail} />
+            <Route exact path={baseUrl} component={Home} />
+            <Route exact path={`${baseUrl}:org/`} component={OrgListing} />
+            <Route path={`${baseUrl}:owner/:name`} component={RepoDetail} />
           </Switch>
         </QueryParamProvider>
       </Router>

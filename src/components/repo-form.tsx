@@ -109,7 +109,7 @@ export function RepoForm() {
       validateOnBlur={false}
       validateOnChange={false}
       onSubmit={(values) => {
-        history.push(`/${values.owner}/` + (values.name || ''))
+        history.push(`${import.meta.env.BASE_URL}${values.owner}/` + (values.name || ''))
       }}
     />
   );

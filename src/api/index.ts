@@ -10,7 +10,11 @@ export type listCommitsResponse =
   Endpoints["GET /repos/{owner}/{repo}/commits"]["response"];
 
 const githubApiURL = `https://api.github.com`;
-const cachedPat = store.get("flat-viewer-pat");
+console.log(import.meta.env.VITE_GITHUB_TOKEN_UPW) // 123
+
+const cachedPat = store.get("flat-viewer-pat") || import.meta.env.VITE_GITHUB_TOKEN_UPW;
+
+console.log(cachedPat);
 
 let githubWretch = cachedPat
   ? wretch(githubApiURL).auth(`token ${cachedPat}`)
