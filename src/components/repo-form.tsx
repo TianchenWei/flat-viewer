@@ -84,7 +84,7 @@ function RepoFormComponent(props: FormikProps<Repo>) {
           <p className="text-gray-500 text-sm">Start with an example:</p>
           <div className="flex items-center space-x-2">
             <Link
-              to="/githubocto/flat-demo-bitcoin-price"
+              to={import.meta.env.BASE_URL+"githubocto/flat-demo-bitcoin-price"}
               className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-900 hover:bg-gray-700 text-white font-mono focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             >
               githubocto/flat-demo-bitcoin-price
